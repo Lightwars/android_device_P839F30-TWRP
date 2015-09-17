@@ -17,6 +17,6 @@
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-$(call inherit-product, device/zte/p839f30/full_p839f30.mk)
+$(call inherit-product, device/zte/P839F30/full_P839F30.mk)
 
-PRODUCT_NAME := omni_p839f30
+PRODUCT_NAME := omni_P839F30

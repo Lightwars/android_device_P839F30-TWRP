@@ -18,15 +18,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from device.mk
-$(call inherit-product, device/zte/p839f30/device.mk)
+$(call inherit-product, device/zte/P839F30/device.mk)
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/zte/p839f30/rootdir,root)
+    $(call find-copy-subdir-files,*,device/zte/P839F30/rootdir,root)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := p839f30
-PRODUCT_NAME := full_p839f30
+PRODUCT_DEVICE := P839F30
+PRODUCT_NAME := full_P839F30
 PRODUCT_BRAND := ZTE
 PRODUCT_MODEL := Blade S6
 PRODUCT_MANUFACTURER := ZTE

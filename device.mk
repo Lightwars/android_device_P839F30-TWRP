@@ -17,6 +17,6 @@
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-PRODUCT_COPY_FILES += \
-    device/zte/p839f30/kernel:kernel
+#PRODUCT_COPY_FILES += \
+#    device/zte/P839F30/kernel:kernel
 
