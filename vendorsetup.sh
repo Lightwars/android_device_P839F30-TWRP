@@ -1,1 +1,1 @@
-add_lunch_combo omni_P839F30-userdebug
+add_lunch_combo omni_p839f30-eng
