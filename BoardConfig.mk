@@ -13,7 +13,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := cortex-a7
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
@@ -37,18 +37,18 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_USES_QCOM_HARDWARE := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/zte/p839f30
-TARGET_KERNEL_CONFIG := msm_p839f30_defconfig
-#TARGET_PREBUILT_KERNEL := device/zte/p839f30/kernel
-#TARGET_CUSTOM_KERNEL_HEADERS := device/zte/p839f30/include
+#TARGET_KERNEL_SOURCE := kernel/zte/p839f30
+#TARGET_KERNEL_CONFIG := msm_p839f30_defconfig
+TARGET_CUSTOM_KERNEL_HEADERS := device/zte/p839f30/include
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_CUSTOM_BOOTIMG_MK := device/zte/p839f30/mkbootimg.mk
-BOARD_MKBOOTIMG_ARGS :=--ramdisk_offset 0x01000000 --tags_offset 0x00000100
+#BOARD_CUSTOM_BOOTIMG_MK := device/zte/p839f30/mkbootimg.mk
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/zte/p839f30/dt.img
+TARGET_PREBUILT_KERNEL := device/zte/p839f30/kernel
 
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
@@ -60,7 +60,7 @@ RECOVERY_VARIANT := twrp
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-TARGET_USERIMAGES_USE_EXT4 := true
+#TARGET_USERIMAGES_USE_F2FS := true
 
 # TWRP-Specific
 TARGET_RECOVERY_FSTAB := device/zte/p839f30/recovery/etc/twrp.fstab
@@ -69,8 +69,8 @@ TW_INCLUDE_CRYPTO := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_TARGET_USES_QCOM_BSP := true
 TW_NEW_ION_HEAP := true
-TW_INTERNAL_STORAGE_PATH := "/internal_sd"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "internal_sd"
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_DEFAULT_EXTERNAL_STORAGE := true
