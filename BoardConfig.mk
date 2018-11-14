@@ -59,7 +59,7 @@ RECOVERY_VARIANT := twrp
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 #TARGET_USERIMAGES_USE_F2FS := true
 
 # TWRP-Specific
@@ -82,3 +82,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_VOLD_MAX_PARTITIONS := 40
+
+# Include tzdata for recovery
+PRODUCT_COPY_FILES += \
+    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
